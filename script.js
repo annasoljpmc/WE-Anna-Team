@@ -64,3 +64,4 @@ function displayMoves(moves) {
         movesList.appendChild(listItem);
     });
 }
+
