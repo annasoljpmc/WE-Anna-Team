@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon API Example</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Pokémon API Example</h1>
+        <form id="pokemonForm" class="mb-5">
+            <div class="form-group">
+                <label for="pokemonName">Enter Pokémon Name:</label>
+                <input type="text" class="form-control" id="pokemonName" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Get Pokémon</button>
+        </form>
+        <div id="pokemonInfo" class="d-none">
+            <h2 id="pokemonTitle"></h2>
+            <img id="pokemonImage" class="img-fluid" alt="Pokémon Image">
+            <ul id="pokemonAbilities" class="list-group mt-3"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
