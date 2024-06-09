@@ -25,21 +25,38 @@ async function getPokemonData(name) {
 function displayPokemon(pokemon, species) {
     document.getElementById('pokemonInfo').classList.remove('d-none');
     document.getElementById('pokemonTitle').textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-    document.getElementById('pokemonImage').src = pokemon.sprites.front_default;
+    document.getElementById('pokemonDescription').textContent = getDescription(species);
+    document.getElementById('pokemonImage').src = pokemon.sprites.front_default; // Set Pokémon picture
 
+    displayAbilities(pokemon.abilities);
+    displayMoves(pokemon.moves);
+}
+
+
+function getDescription(species) {
+    return species.flavor_text_entries.find(entry => entry.language.name === 'en').flavor_text;
+}
+
+function displayAbilities(abilities) {
     const abilitiesList = document.getElementById('pokemonAbilities');
     abilitiesList.innerHTML = '';
 
-    pokemon.abilities.forEach(ability => {
+    abilities.forEach(ability => {
         const listItem = document.createElement('li');
         listItem.classList.add('list-group-item');
         listItem.textContent = ability.ability.name;
         abilitiesList.appendChild(listItem);
     });
+}
 
-    const description = species.flavor_text_entries.find(entry => entry.language.name === 'en').flavor_text;
-    const descriptionItem = document.createElement('li');
-    descriptionItem.classList.add('list-group-item');
-    descriptionItem.textContent = `Description: ${description}`;
-    abilitiesList.appendChild(descriptionItem);
+function displayMoves(moves) {
+    const movesList = document.getElementById('pokemonMoves');
+    movesList.innerHTML = '';
+
+    moves.forEach(move => {
+        const listItem = document.createElement('li');
+        listItem.classList.add('list-group-item');
+        listItem.textContent = move.move.name;
+        movesList.appendChild(listItem);
+    });
 }

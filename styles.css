@@ -3,12 +3,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-#pokemonImage {
-    max-width: 200px;
-    display: block;
-    margin: 0 auto;
-}
-
 #pokemonInfo {
-    text-align: center;
+    margin-top: 20px;
 }
