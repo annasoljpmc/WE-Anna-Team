@@ -25,13 +25,17 @@ async function getPokemonData(name) {
 function displayPokemon(pokemon, species) {
     document.getElementById('pokemonInfo').classList.remove('d-none');
     document.getElementById('pokemonTitle').textContent = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-    document.getElementById('pokemonDescription').textContent = getDescription(species);
     document.getElementById('pokemonImage').src = pokemon.sprites.front_default; // Set Pokémon picture
 
     displayAbilities(pokemon.abilities);
     displayMoves(pokemon.moves);
+    displayDescription(species);
 }
 
+function displayDescription(species) {
+    const descriptionText = getDescription(species);
+    document.getElementById('pokemonDescription').textContent = descriptionText;
+}
 
 function getDescription(species) {
     return species.flavor_text_entries.find(entry => entry.language.name === 'en').flavor_text;
