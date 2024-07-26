@@ -8,9 +8,12 @@ async function activity() {
                 throw new Error('Network response was not ok');
             }
             return response.json();
+
         })
         .then(data => {
             console.log(data);
+            let actitivity_element = document.getElementById("activity")
+            actitivity_element.innerHTML = data.activity
         })
         .catch(error => {
             console.error('Error:', error);
