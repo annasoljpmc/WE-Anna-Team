@@ -1,7 +1,7 @@
 {
-    "name": "Pokemon API Web App",
-    "short_name": "Pokemon App",
-    "description": "An example web app to display Pokémon information using the Pokémon API.",
+    "name": "Activity Weather",
+    "short_name": "AccuWeather",
+    "description": "An app that gives you activites based on weather!",
     "icons": [
       {
         "src": "icon-192x192.png",
@@ -14,7 +14,7 @@
         "type": "image/png"
       }
     ],
-    "start_url": "/dash.html",
+    "start_url": "/index.html",
     "display": "standalone",
     "theme_color": "#ffffff",
     "background_color": "#ffffff"
