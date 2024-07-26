@@ -1,5 +1,6 @@
-// Define the API URL
-const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m';
+function weather(latitude,longitude){
+    // Define the API URL
+const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude='+latitude+'&longitude='+longitude+'&current=temperature_2m,apparent_temperature,rain,weather_code,wind_speed_10m';
 
 // Make a GET request
 fetch(apiUrl)
@@ -15,3 +16,5 @@ fetch(apiUrl)
     .catch(error => {
         console.error('Error:', error);
     });
+}
+
